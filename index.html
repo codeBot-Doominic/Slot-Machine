@@ -11,8 +11,8 @@
     <div class="wrapper">
       <div class="form-header">
           <div class="titles">
-              <div class="title-login">Login</div>
-              <div class="title-register">Register</div>
+              <div class="title-login show">Login</div>
+              <div class="title-register hide">Sign Up</div>
           </div>
       </div>
 
@@ -34,7 +34,7 @@
           </div>
         </form>
 
-      <!-- REGISTER FORM -->
+      <!-- SIGNUP FORM -->
         <form action = "#" id="signupForm" class="register-form" autocomplete="off">
           <div class="input-box">
             <input type="text" class="input-field" id="signupUsername" required>
@@ -54,7 +54,7 @@
 
 
 <script>
-  // UI Toggle Functions
+  //UI Animations
   const loginForm = document.querySelector(".login-form");
   const registerForm = document.querySelector(".register-form");
   const wrapper = document.querySelector(".wrapper");
@@ -68,10 +68,12 @@
     loginForm.style.opacity = 1;
     registerForm.style.left = "150%";
     registerForm.style.opacity = 0;
-    wrapper.style.height = "500px";
-    loginTitle.style.top = "50%";
+
+    loginTitle.style.display = "block";
     loginTitle.style.opacity = 1;
-    registerTitle.style.top = "50px";
+    loginTitle.style.top = "50%";
+
+    registerTitle.style.display = "none";
     registerTitle.style.opacity = 0;
   }
 
@@ -80,14 +82,17 @@
     loginForm.style.opacity = 0;
     registerForm.style.left = "50%";
     registerForm.style.opacity = 1;
-    wrapper.style.height = "500px";
-    loginTitle.style.top = "-60px";
-    loginTitle.style.opacity = 0;
-    registerTitle.style.top = "50%";
+
+    registerTitle.style.display = "block";
     registerTitle.style.opacity = 1;
+    registerTitle.style.top = "50%";
+
+    loginTitle.style.display = "none";
+    loginTitle.style.opacity = 0;
   }
 
-  // Button Event Listeners for Switching Forms
+
+  //Login and Signup Switching
   if (signUpBtn) signUpBtn.addEventListener("click", registerFunction);
   if (signInBtn) signInBtn.addEventListener("click", loginFunction);
 
