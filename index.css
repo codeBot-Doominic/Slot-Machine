@@ -85,7 +85,7 @@ body{
 }
 /* TITLES */
 .titles{
-    position: relative;
+    position: absolute;
 }
 .title-login, .title-register{
     position: absolute;
@@ -203,6 +203,18 @@ body{
 .loginSwitch{
     color: #FFF;
 }
+
+/* Title visibility control */
+.hide {
+    display: none;
+    opacity: 0;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
 
 /* RESPONSIVE STYLES */
 @media only screen and (max-width: 564px){
